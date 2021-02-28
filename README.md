@@ -23,3 +23,4 @@ yarn install
 
 yarn run serve
 ```
+Web appliacation is on http://localhost:8080/vehicle
