@@ -1,0 +1,35 @@
+version: "3.2"
+
+services:
+    # ------------------------------------------------------------
+    # SQL Database #1 - PostgreSQL
+    # ------------------------------------------------------------
+    database-postgresql:
+        image: digihey-database-postgresql
+        container_name: digihey-database-postgresql
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                POSTGRES_VERSION: 12.2
+        networks:
+            - api
+            - postgresql
+        environment:
+            POSTGRES_PASSWORD: digihey**!
+            POSTGRES_USER: digihey
+            POSTGRES_DB: digihey
+            PG_DATA: /var/lib/postgresql/data
+        volumes:
+            - .data/database/postgresql:/var/lib/postgresql/data
+        ports:
+            - 5433:5432
+
+networks:
+    api:
+    postgresql:
+        driver: bridge
+volumes:
+    # broker: ~
+    database: ~
