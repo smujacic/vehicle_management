@@ -7,6 +7,7 @@ and next run will up without database import (in case that at least one row was 
 
 ```
 cd server
+
 yarn install
 
 yarn docker-up
@@ -17,6 +18,7 @@ yarn start:dev
 ### WEB Setup
 ```
 cd web
+
 yarn install
 
 yarn run serve
